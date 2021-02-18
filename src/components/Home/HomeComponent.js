@@ -15,7 +15,7 @@ export default function HomeComponent() {
     onScrollSearch,
     onSelect,
   } = useContext(HomeContext);
-  console.log({ persistItems });
+
   return (
     <div className="home-style">
       <div className="home-style__searchBox">

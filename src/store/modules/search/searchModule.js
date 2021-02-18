@@ -27,8 +27,12 @@ export const INITIAL_STATE = {
 const reducer = createReducer(INITIAL_STATE, {
   [types.ON_SEARCH]: (state, action) => {
     const { value } = action.payload;
-    state.data.value = value;
+
     state.data.loading = true;
+    if (state.data.value !== value) {
+      state.data.searchedItems = [];
+    }
+    state.data.value = value;
   },
   [types.ON_SEARCH_RESET]: (state, action) => {
     state.data.value = "";

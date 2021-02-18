@@ -12,7 +12,7 @@ export default function ListComponent(props) {
     if (scrollTop + clientHeight >= scrollHeight) {
       // 페이지 끝에 도달하면 추가 데이터를 받아온다
       setScrollCount(scrollCount + 1);
-      onScrollSearch({ value, page: scrollCount });
+      onScrollSearch({ value, page: scrollCount + 1 });
     }
   };
   useEffect(() => {

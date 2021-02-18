@@ -26,14 +26,17 @@ const reducer = createReducer(INITIAL_STATE, {
     } = action.payload;
 
     if (items.length) {
-      let targetIndex = null;
-      if (state.data.persistItems[value]) {
+      if (
+        state.data.persistItems[value] &&
+        !state.data.persistItems[value].includes(items[0])
+      ) {
         state.data.persistItems[value] = state.data.persistItems[value].concat(
           items
         );
       } else {
         state.data.persistItems[value] = items;
       }
+      // let targetIndex = null;
       // state.data.persistItems.forEach((target, index) => {
       //   if (target?.keyword === value) {
       //     targetIndex = index;
