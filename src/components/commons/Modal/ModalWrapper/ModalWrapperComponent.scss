@@ -1,0 +1,220 @@
+@import "styles/base/_response";
+
+@font-face {
+  font-family: "BMDOHYEON";
+  src: url("https://cdn.jsdelivr.net/gh/projectnoonnu/noonfonts_one@1.0/BMDOHYEON.woff")
+    format("woff");
+}
+
+.blackout {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  z-index: 100;
+  overflow: hidden;
+  animation-duration: 0.3s;
+  animation-name: fadeIn;
+  &.animation {
+    background: rgba(0, 0, 0, 0.4);
+    @keyframes fadeIn {
+      from {
+        background: rgba(31, 30, 30, 0);
+      }
+      to {
+        background: rgba(0, 0, 0, 0.4);
+      }
+    }
+  }
+}
+
+.light {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  &.animation {
+    background: rgba(100, 100, 100, 0);
+  }
+  &.active {
+    z-index: 100;
+  }
+}
+
+.modalWrapper {
+  /* width: 80%; */
+  /* border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px; */
+  overflow: hidden;
+  /* position: fixed; */
+
+  width: 30%;
+  height: max-content;
+  border-radius: 10px;
+  position: absolute;
+  top: 26%;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-left: auto;
+  margin-right: auto;
+  @media screen and (max-width: 1200px) {
+    width: 35%;
+  }
+  @media screen and (max-width: 1030px) {
+    width: 40%;
+  }
+  @media screen and (max-width: 910px) {
+    width: 45%;
+  }
+  @media screen and (max-width: 810px) {
+    width: 50%;
+  }
+  @media screen and (max-width: 680px) {
+    width: 55%;
+  }
+  @media screen and (max-width: 610px) {
+    width: 60%;
+  }
+  @media screen and (max-width: 560px) {
+    width: 65%;
+  }
+  @media screen and (max-width: 520px) {
+    width: 70%;
+  }
+  @media screen and (max-width: 480px) {
+    width: 80%;
+  }
+  @media screen and (max-width: 420px) {
+    width: 94%;
+  }
+
+  @include mobile {
+    /*  top: 45%;
+    left: 50%; */
+    /* transform: translate(-50%, -50%) !important; */
+  }
+  @include tablet {
+    /* top: 30%;
+    left: 55%; */
+    /* 숨겨둔 이유 : 클릭시 팝업창이 center 위치로 안오고 약간 우측으로 쏠려서 일단 숨겨둠. */
+  }
+
+  /* top: 30%;
+  left: 35%; */
+  transform: translate(-50%, -50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  transform: translateY(-50%);
+  z-index: 101;
+  box-shadow: 2px 3px 4px 2px rgba(0, 0, 0, 0.2);
+
+  &.noneStyle > .modalTitle__wrapper > .modalTitle__container {
+    justify-content: flex-start;
+  }
+
+  &.noneStyle {
+    .modalTitle__wrapper {
+      position: absolute;
+    }
+  }
+
+  &.purpleGradientStyle > .modalTitle__wrapper {
+    background: linear-gradient(120deg, #470550, #6b1367);
+    color: #fff;
+    vertical-align: top;
+
+    & > .modalTitle__container {
+      justify-content: center;
+      color: pink;
+    }
+  }
+
+  &.blueGradientStyle > .modalTitle__wrapper {
+    background: linear-gradient(120deg, #152037, #213972);
+    color: #fff;
+    vertical-align: top;
+    & > .modalTitle__container {
+      /* justify-content: center; */
+      color: white;
+    }
+  }
+
+  &.blackGradientStyle > .modalTitle__wrapper {
+    background: linear-gradient(120deg, #01010a, #070b13);
+    color: #fff;
+    vertical-align: top;
+    & > .modalTitle__container {
+      /* justify-content: center; */
+      color: white;
+    }
+  }
+
+  &.whiteGradientStyle > .modalTitle__wrapper {
+    background: linear-gradient(120deg, #c2bfc2, #f3eff3);
+    color: #fff;
+    vertical-align: top;
+
+    & > .modalTitle__container {
+      /* justify-content: center; */
+      color: black;
+    }
+  }
+
+  &.hideModal {
+    display: none;
+  }
+}
+
+.modalTitle__wrapper {
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  /* display: inline-block; */
+  width: 100%;
+  cursor: grab;
+  padding: 15.6px 17.7px 16px 17.7px;
+  /* display: flex; */
+  /* flex-direction: row; */
+  .modalTitle__container {
+    position: relative;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    .icon-closing {
+      width: 20px;
+      height: 20px;
+      cursor: pointer;
+      &:before {
+        width: 100%;
+        height: 100%;
+        margin: 0;
+      }
+      &:hover {
+        opacity: 0.7;
+      }
+    }
+    .modalTitle--text {
+      font-family: "BMDoHyeon";
+      font-size: 18px;
+      line-height: 18px;
+      font-weight: normal;
+      letter-spacing: normal;
+      text-align: left;
+      color: #ffffff;
+      margin-top: 2px;
+    }
+
+    & > .icon-closing:before {
+      color: themed("popup-color-2");
+    }
+  }
+}
+
+.modalContent__wrapper {
+  // min-height: 150px;
+}

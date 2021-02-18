@@ -1,0 +1,50 @@
+@import "styles/base/_response";
+.error-msg {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+}
+.list-style {
+  display: flex;
+  flex-wrap: wrap;
+  width: 90%;
+  margin: 0 auto;
+
+  &__listContent {
+    display: inline-flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #c4c4c4;
+    border: solid 10px white;
+
+    @include mobile {
+      width: 45%;
+      height: 100px;
+    }
+    @include tablet {
+      width: 45%;
+      height: 100px;
+    }
+    @include desktop {
+      width: 30%;
+      height: 100px;
+    }
+    &.show {
+    }
+    &.hide {
+      display: none;
+      height: 0;
+      width: 0;
+    }
+
+    .title {
+      color: white;
+    }
+    .description {
+      color: aliceblue;
+      object-fit: contain;
+      max-width: 50px;
+    }
+  }
+}

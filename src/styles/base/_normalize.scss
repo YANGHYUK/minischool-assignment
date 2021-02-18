@@ -1,0 +1,175 @@
+/* Reset */
+
+@import url("https://fonts.googleapis.com/css?family=Noto+Sans+KR:100,300,400,500,700,900&subset=korean");
+
+body,
+div,
+dl,
+dt,
+dd,
+ul,
+ol,
+li,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+table,
+th,
+td,
+form,
+fieldset,
+legend,
+textarea,
+input,
+select,
+textarea,
+header,
+button {
+  margin: 0;
+  padding: 0;
+  font-family: "Noto Sans KR", sans-serif;
+}
+
+html {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  width: 100%;
+}
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
+}
+html,
+body {
+  height: 100%;
+}
+body:before {
+  background-size: cover;
+}
+body {
+  font-family: "Noto Sans KR", sans-serif;
+  position: relative;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  /* max-width: 1000px; */ /* 임시로 가려놓음. (클라이언트의 요청(할말하않...)) 차후 다시 적용 */
+  font-size: 12px;
+  font-weight: 300;
+  letter-spacing: -0.4px;
+  color: #252525;
+  -moz-osx-font-smoothing: grayscale;
+  /* background-color: #03091c; 원래 컬러. 이따 적용 */
+  padding: 0;
+  margin: 0;
+  // background-color: #01091d;
+  overflow-x: hidden;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-style: normal;
+  font-weight: 400;
+}
+fieldset,
+li,
+img {
+  vertical-align: top;
+  border: 0;
+}
+ul,
+ol {
+  list-style: none;
+}
+strong {
+  font-weight: 700;
+}
+input,
+button,
+select,
+textarea {
+  letter-spacing: -0.4px;
+}
+
+button {
+  overflow: visible;
+  font-size: 12px;
+  cursor: pointer;
+  border: 0;
+  background-color: transparent;
+}
+button::-moz-focus-inner {
+  padding: 0;
+  border: 0;
+}
+address,
+caption,
+em {
+  font-style: normal;
+}
+a,
+a:focus,
+a:active,
+a:visited,
+a:hover {
+  text-decoration: none;
+  color: inherit;
+  // color: white;
+}
+table {
+  border-spacing: 0;
+  border-collapse: collapse;
+}
+caption,
+legend {
+  display: none;
+}
+hr {
+  display: none;
+}
+input[type="text"]::-ms-clear {
+  display: none;
+}
+input[type="search"] {
+  -webkit-appearance: textfield;
+}
+input[type="text"] {
+  -webkit-appearance: none;
+}
+input[type="search"]::-webkit-search-decoration,
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-results-button,
+input[type="search"]::-webkit-search-results-decoration {
+  -webkit-appearance: none;
+}
+textarea {
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+/* * {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+  text-shadow: rgba(0, 0, 0, 0.01) 0 0 1px;
+} */
+*:focus {
+  outline: none;
+}
+.clearfix {
+  clear: both;
+  content: "";
+  display: block;
+}
+
+input:-webkit-autofill {
+  transition: background-color 5000s ease-in-out 0s !important;
+  caret-color: white;
+}
