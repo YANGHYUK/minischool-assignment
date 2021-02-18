@@ -18,21 +18,14 @@ export const INITIAL_STATE = {
 const reducer = createReducer(INITIAL_STATE, {
   [types.ON_STORAGE_SUCCESS]: (state, action) => {
     console.log({ action }, "persist@@#@#@#@");
-    const {
-      value,
-      total_count = 0,
-      items = 0,
-      incomplete_results = false,
-    } = action.payload;
+    const { value, total_count = 0, items = 0, incomplete_results = false } = action.payload;
 
     if (items.length) {
       if (
         state.data.persistItems[value] &&
-        !state.data.persistItems[value].includes(items[0])
+        !state.data.persistItems[value].find(persistItem => persistItem.id === items[0].id)
       ) {
-        state.data.persistItems[value] = state.data.persistItems[value].concat(
-          items
-        );
+        state.data.persistItems[value] = state.data.persistItems[value].concat(items);
       } else {
         state.data.persistItems[value] = items;
       }
