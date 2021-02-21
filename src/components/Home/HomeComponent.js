@@ -16,6 +16,13 @@ export default function HomeComponent() {
     onSelect,
   } = useContext(HomeContext);
 
+  let items = []; // Object 형태로 각기 저장되어 있는 storage 데이터를 하나의 배열로 합침
+  for (const key in persistItems) {
+    if (key.includes(value)) {
+      items = [...items, ...persistItems[key]];
+    }
+  }
+
   return (
     <div className="home-style">
       <div className="home-style__searchBox">
@@ -44,11 +51,10 @@ export default function HomeComponent() {
             loading={loading}
             value={value}
             onScrollSearch={onScrollSearch}
-            items={
-              persistItems[value]
-              // persistItems.filter(
-              //   (ele) => ele?.keyword === value && ele?.items
-              // )[0]?.items
+            items={ 
+              items.filter((item1, index) => 
+              index === items.findIndex((item2) =>  // 중복되는 계정을 제거
+              item1.id === item2.id))
             }
           />
         )}
